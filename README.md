@@ -8,4 +8,5 @@
 ```
 docker compose up -d 
 ```
-Доступ к PgAdmin ```localhost:5050/browser/```
+Доступ к PgAdmin: ```localhost:5050/browser/```
+
