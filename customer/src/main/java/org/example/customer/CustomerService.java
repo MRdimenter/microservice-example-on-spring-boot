@@ -12,10 +12,8 @@ public record CustomerService(CustomerRepository customerRepository) {
                 .build();
 
         customerRepository.save(customer);
+
+        // todo: check if email valid
+        // todo: check if email not taken
     }
-
-    // todo: check if email valid
-    // todo: check if email not taken
-
-
 }
