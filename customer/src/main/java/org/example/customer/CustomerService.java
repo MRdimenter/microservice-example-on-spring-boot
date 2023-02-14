@@ -25,4 +25,8 @@ public record CustomerService(CustomerRepository customerRepository, RestTemplat
         // todo: check if email valid
         // todo: check if email not taken
     }
+
+    public Customer getCustomerById(int id) {
+        return customerRepository.findById(id).orElseThrow();
+    }
 }
