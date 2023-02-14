@@ -1,4 +1,4 @@
-package org.example.customer.controllers;
+package org.example.customer.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.customer.Customer;
@@ -19,8 +19,7 @@ public record CustomerRestController(CustomerService customerService) {
         customerService.registerCustomer(customerRegistrationRequest);
     }
 
-    @GetMapping()
-
+    @GetMapping("getById")
     public Customer getCustomerById(@RequestParam int id) {
         try{
             return customerService.getCustomerById(id);
