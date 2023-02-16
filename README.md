@@ -20,8 +20,18 @@ localhost:8080/api/v1/customers
 
 ---
 ### Микросервис Fraud
+**GET-запросы**
 
-
+Получение информации является ли клиент мошенником:
+```
+http://localhost:8081/api/v1/fraud-check/{customerId}
+```
+Пример ответа:
+```json
+{
+  "isFraudster": false
+}
+```
 
 ---
 ### Запуск Postgres и PgAdmin с помощью docker compose
