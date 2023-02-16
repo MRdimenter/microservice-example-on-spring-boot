@@ -1,5 +1,5 @@
-# microservice application example on Spring Boot
 [![CodeFactor](https://www.codefactor.io/repository/github/mrdimenter/microservice-example-on-spring-boot/badge)](https://www.codefactor.io/repository/github/mrdimenter/microservice-example-on-spring-boot)
+# microservice application example on Spring Boot
 ----
 ### Микросервис Customer
 **POST-запросы**
@@ -16,6 +16,11 @@ localhost:8080/api/v1/customers
     "email": "example@gmail.com"
 }
 ```
+
+
+---
+### Микросервис Fraud
+
 
 
 ---

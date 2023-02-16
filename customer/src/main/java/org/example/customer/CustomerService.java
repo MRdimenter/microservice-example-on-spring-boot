@@ -13,6 +13,10 @@ public record CustomerService(CustomerRepository customerRepository, RestTemplat
                 .build();
 
         customerRepository.saveAndFlush(customer);
+
+        /**
+         * Запрашиваем метод get что бы получить объект FraudCheckResponse
+         */
         FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
                 "http://localhost:8081/api/v1/fraud-check/{customerId}",
                 FraudCheckResponse.class,

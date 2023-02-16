@@ -1,6 +1,8 @@
-package org.example;
+package org.example.controller;
 
 import lombok.AllArgsConstructor;
+import org.example.FraudCheckResponse;
+import org.example.FraudCheckService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
