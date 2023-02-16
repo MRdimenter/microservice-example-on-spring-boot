@@ -1,5 +1,5 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/mrdimenter/microservice-example-on-spring-boot/badge)](https://www.codefactor.io/repository/github/mrdimenter/microservice-example-on-spring-boot)
-# microservice application example on Spring Boot
+# Пример приложения с микросервисной архитектурой на Spring Boot
 ----
 ### Микросервис Customer
 **POST-запросы**
