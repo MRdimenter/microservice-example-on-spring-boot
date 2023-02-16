@@ -1,4 +1,4 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/mrdimenter/microservice-example-on-spring-boot/badge)](https://www.codefactor.io/repository/github/mrdimenter/microservice-example-on-spring-boot)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4f0a72a3fea243f68101982765be81b8)](https://www.codacy.com/gh/MRdimenter/microservice-example-on-spring-boot/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MRdimenter/microservice-example-on-spring-boot&amp;utm_campaign=Badge_Grade) [![CodeFactor](https://www.codefactor.io/repository/github/mrdimenter/microservice-example-on-spring-boot/badge)](https://www.codefactor.io/repository/github/mrdimenter/microservice-example-on-spring-boot)
 # Пример приложения с микросервисной архитектурой на Spring Boot
 ----
 ### Микросервис Customer
