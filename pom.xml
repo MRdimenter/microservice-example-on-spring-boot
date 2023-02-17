@@ -20,6 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.boot.maven.plugin.version>3.0.2</spring.boot.maven.plugin.version>
         <spring.boot.dependecies.version>3.0.2</spring.boot.dependecies.version>
+        <spring.cloud-version>2022.0.1</spring.cloud-version>
     </properties>
 
 
