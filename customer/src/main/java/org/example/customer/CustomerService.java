@@ -17,9 +17,10 @@ public record CustomerService(CustomerRepository customerRepository, RestTemplat
 
         /**
          * Запрашиваем метод get что бы получить объект FraudCheckResponse
+         * Используем FRAUD в запросе из eureka-server
          */
         FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
-                "http://localhost:8081/api/v1/fraud-check/{customerId}",
+                "http://FRAUD/api/v1/fraud-check/{customerId}",
                 FraudCheckResponse.class,
                 customer.getId()
         );
