@@ -18,7 +18,7 @@ localhost:8080/api/v1/customers
 ```
 
 
----
+----
 ### Микросервис Fraud
 **GET-запросы**
 
@@ -33,7 +33,7 @@ http://localhost:8081/api/v1/fraud-check/{customerId}
 }
 ```
 
----
+----
 ### Запуск Postgres и PgAdmin с помощью docker compose
 
 Необходимо выполнить команду

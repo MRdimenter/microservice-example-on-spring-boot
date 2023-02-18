@@ -15,7 +15,6 @@ public class CustomerConfig {
     @LoadBalanced // необходим что бы можно было использовать уже сбалансированные имена для обращения к микросервисам
     public RestTemplate restTemplate() {
         return new RestTemplate();
-
     }
 
 }
