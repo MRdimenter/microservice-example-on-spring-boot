@@ -1,4 +1,4 @@
-package org.example.customer;
+package org.example.clients.fraud;
 
 public record FraudCheckResponse(Boolean isFraudster) {
 }

@@ -1,11 +1,14 @@
 package org.example.customer;
 
+import org.example.clients.fraud.FraudCheckResponse;
+import org.example.clients.fraud.FraudClient;
 import org.example.customer.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public record CustomerService(CustomerRepository customerRepository, RestTemplate restTemplate) {
+public record CustomerService(CustomerRepository customerRepository, RestTemplate restTemplate,
+                              FraudClient fraudClient) {
     public void registerCustomer(CustomerRegistrationRequest request) {
         Customer customer = Customer.builder()
                 .firstName(request.firstName())
@@ -17,17 +20,14 @@ public record CustomerService(CustomerRepository customerRepository, RestTemplat
 
         /**
          * Запрашиваем метод get что бы получить объект FraudCheckResponse
-         * Используем FRAUD в запросе из eureka-server
          */
-        FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
-                "http://FRAUD/api/v1/fraud-check/{customerId}",
-                FraudCheckResponse.class,
-                customer.getId()
-        );
+        FraudCheckResponse fraudCheckResponse =
+                fraudClient.isFraudster(customer.getId());
 
-        if(fraudCheckResponse.isFraudster()) {
+        if (fraudCheckResponse.isFraudster()) {
             throw new IllegalStateException("fraudster");
         }
+
         // todo: check if email valid
         // todo: check if email not taken
     }
