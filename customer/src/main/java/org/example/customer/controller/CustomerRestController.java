@@ -4,13 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.customer.Customer;
 import org.example.customer.CustomerRegistrationRequest;
 import org.example.customer.CustomerService;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Slf4j
@@ -24,14 +20,15 @@ public record CustomerRestController(CustomerService customerService) {
         customerService.registerCustomer(customerRegistrationRequest);
     }
 
-    @GetMapping("getById")
-    public Customer getCustomerById(@RequestParam int id) {
-        try{
-            return customerService.getCustomerById(id);
-        } catch (NoSuchElementException e) {
-            log.info(e.toString());
-            return new Customer();
-        }
+    @GetMapping("/{id}")
+    @ResponseBody
+    public Customer getCustomerById(@PathVariable int id) {
+        return customerService.getCustomerById(id);
+    }
 
+    @GetMapping()
+    @ResponseBody
+    public List<Customer> getCustomers() {
+        return customerService.getCustomers();
     }
 }

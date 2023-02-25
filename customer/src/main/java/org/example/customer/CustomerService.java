@@ -6,6 +6,8 @@ import org.example.customer.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 @Service
 public record CustomerService(CustomerRepository customerRepository, RestTemplate restTemplate,
                               FraudClient fraudClient) {
@@ -34,5 +36,10 @@ public record CustomerService(CustomerRepository customerRepository, RestTemplat
 
     public Customer getCustomerById(int id) {
         return customerRepository.findById(id).orElseThrow();
+    }
+
+
+    public List<Customer> getCustomers() {
+        return customerRepository.findAll();
     }
 }
