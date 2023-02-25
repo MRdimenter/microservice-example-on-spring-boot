@@ -30,8 +30,7 @@ public record CustomerService(CustomerRepository customerRepository, RestTemplat
             throw new IllegalStateException("fraudster");
         }
 
-        // todo: check if email valid
-        // todo: check if email not taken
+        // todo send notification
     }
 
     public Customer getCustomerById(int id) {
