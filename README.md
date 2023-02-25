@@ -34,6 +34,23 @@ http://localhost:8081/api/v1/fraud-check/{customerId}
 ```
 
 ----
+### Микросервис Eureka Server 
+
+Знает о всех клиент-приложениях и на каком они порте и IP адресе.
+
+Необходим для того что бы можно было создавать множенство экземпляров приложений (контейнеров) и знать к какому конкретно экземпляру необходимо обращаться.
+
+Пример регистрации микросервиса на Eureka:
+```yml
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+```
+
+----
 ### Запуск Postgres и PgAdmin с помощью docker compose
 
 Необходимо выполнить команду
