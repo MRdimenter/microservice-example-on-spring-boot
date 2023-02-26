@@ -2,6 +2,8 @@ package org.example.customer;
 
 import org.example.clients.fraud.FraudCheckResponse;
 import org.example.clients.fraud.FraudClient;
+import org.example.clients.notification.Notification;
+import org.example.clients.notification.NotificationClient;
 import org.example.customer.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -10,7 +12,7 @@ import java.util.List;
 
 @Service
 public record CustomerService(CustomerRepository customerRepository, RestTemplate restTemplate,
-                              FraudClient fraudClient) {
+                              FraudClient fraudClient, NotificationClient notificationClient) {
     public void registerCustomer(CustomerRegistrationRequest request) {
         Customer customer = Customer.builder()
                 .firstName(request.firstName())
@@ -30,7 +32,13 @@ public record CustomerService(CustomerRepository customerRepository, RestTemplat
             throw new IllegalStateException("fraudster");
         }
 
-        // todo send notification
+
+        notificationClient.sendNotification(Notification
+                .builder()
+                .message("User registration was successful")
+                .build()
+        );
+
     }
 
     public Customer getCustomerById(int id) {
