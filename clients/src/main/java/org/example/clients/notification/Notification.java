@@ -7,8 +7,9 @@ import lombok.Data;
 @Data
 @Builder
 public class Notification {
-
     long id;
     String message;
+    String customerName;
+    String sender;
 
 }

@@ -32,9 +32,11 @@ public record CustomerService(CustomerRepository customerRepository, RestTemplat
             throw new IllegalStateException("fraudster");
         }
 
-
+        // todo: make async send notification
         notificationClient.sendNotification(Notification
                 .builder()
+                .customerName(customer.getFirstName().concat(" ").concat(customer.getLastname()))
+                .sender("customer")
                 .message("User registration was successful")
                 .build()
         );
