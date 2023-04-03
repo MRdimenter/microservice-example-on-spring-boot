@@ -7,3 +7,9 @@ eureka:
   client:
     fetch-registry: false
     register-with-eureka: false
+
+# Trace every action
+management:
+  tracing:
+    sampling:
+      probability: 1.0 #default 0.1

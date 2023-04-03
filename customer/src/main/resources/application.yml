@@ -21,3 +21,10 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka
+
+
+# Trace every action
+management:
+  tracing:
+    sampling:
+      probability: 1.0 #default 0.1
