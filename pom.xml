@@ -15,6 +15,7 @@
         <module>eureka-server</module>
         <module>clients</module>
         <module>notification</module>
+        <module>apigateway</module>
     </modules>
 
     <properties>
