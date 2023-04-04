@@ -7,6 +7,15 @@ spring:
   zipkin:
     base-url: http://localhost:9411
 
+  # Configuring API Gateway
+  cloud:
+    gateway:
+      routes:
+        - id: customer # добавляем микросервис customer
+          uri: lb://CUSTOMER # берется из eureka server
+          predicates:
+            - Path=/api/v1/customers/** # позволяем использовать любые запросы по этому пути
+
 eureka:
   client:
     fetch-registry: true
