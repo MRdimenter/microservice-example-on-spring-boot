@@ -74,6 +74,32 @@ http://localhost:9411/zipkin/
 
 
 ----
+### Микросервис Apigateway
+
+Используется как Load Balancer и единая точка входа. Реализовано с помощью Spring Cloud.
+
+Простая настройка конфигурации: 
+```yml
+  cloud:
+    gateway:
+      routes:
+        - id: customer 
+          uri: lb://CUSTOMER 
+          predicates:
+            - Path=/api/v1/customers/**
+        - id: fraud 
+          uri: lb://FRAUD 
+          predicates:
+            - Path=/api/v1/fraud-check/** 
+```
+
+Пример запроса: 
+```
+localhost:8083/api/v1/customers # Для микросервиса Сustomer
+localhost:8083/api/v1/fraud-check/1 # Для микросервиса Fraud
+```
+
+----
 
 ### Запуск Postgres и PgAdmin с помощью docker compose
 
