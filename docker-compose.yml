@@ -35,6 +35,13 @@ services:
     ports:
       - 9411:9411 # Port used for the Zipkin UI and HTTP Api
 
+  rabbitmq:
+    image: rabbitmq:3.11.13-management-alpine
+    container_name: rabbitmq
+    ports:
+      - 5672:5672 # Для коннекта с микросервисами
+      - 15672:15672 # Админ панель
+
 networks:
   postgres:
     driver: bridge
