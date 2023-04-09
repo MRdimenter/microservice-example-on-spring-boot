@@ -1,7 +1,6 @@
 package org.example;
 
 import lombok.AllArgsConstructor;
-import org.json.JSONArray;
 import org.springframework.amqp.core.AmqpTemplate;
 
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
@@ -11,7 +10,6 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 @Configuration
 @AllArgsConstructor
