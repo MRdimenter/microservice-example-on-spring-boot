@@ -30,3 +30,13 @@ management:
   tracing:
     sampling:
       probability: 1.0 #default 0.1
+
+
+# RabbitMQ configuration
+rabbitmq:
+  exchanges:
+    internal: internal.exchange
+  queue:
+    notification: notification.queue
+  routing-keys:
+    internal-notification: internal.notification.routing-key
