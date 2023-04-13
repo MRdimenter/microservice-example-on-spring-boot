@@ -16,6 +16,9 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
     private final ConnectionFactory connectionFactory;
 
+    /**
+     * Объект используется для отправки сообщений (producer)
+     */
     @Bean
     public AmqpTemplate amqpTemplate() {
         RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
@@ -23,6 +26,9 @@ public class RabbitMQConfig {
         return rabbitTemplate;
     }
 
+    /**
+     * Объект принимает сообщения (consumer)
+     */
     @Bean
     public SimpleRabbitListenerContainerFactory simpleRabbitListenerContainerFactory(){
         SimpleRabbitListenerContainerFactory factory =
@@ -32,6 +38,9 @@ public class RabbitMQConfig {
         return factory;
     }
 
+    /**
+     * JSON конвертер
+     */
     @Bean
     public MessageConverter jacksonConverter() {
         MessageConverter jackson2JsonMessageConverter =
