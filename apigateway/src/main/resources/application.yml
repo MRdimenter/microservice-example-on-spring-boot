@@ -15,7 +15,7 @@ spring:
           uri: lb://CUSTOMER # берется из eureka server
           predicates:
             - Path=/api/v1/customers/** # позволяем использовать любые запросы по этому пути
-        - id: fraud # добавляем микросервис customer
+        - id: fraud # добавляем микросервис fraud
           uri: lb://FRAUD # берется из eureka server
           predicates:
             - Path=/api/v1/fraud-check/** # позволяем использовать любые запросы по этому пути
