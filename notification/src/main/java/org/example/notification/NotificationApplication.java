@@ -17,19 +17,19 @@ public class NotificationApplication {
         SpringApplication.run(NotificationApplication.class);
     }
 
-    @Bean
-    CommandLineRunner commandLineRunner(
-            RabbitMQMessageProducer rabbitMQMessageProducer,
-            NotificationConfig notificationConfig
-    ) {
-        return args -> {
-            rabbitMQMessageProducer.publish(
-                    new Person("Dima", 24),
-                    notificationConfig.getInternalExchange(),
-                    notificationConfig.getInternalNotificationRoutingKeys());
-        };
-    }
+//    @Bean
+//    CommandLineRunner commandLineRunner(
+//            RabbitMQMessageProducer rabbitMQMessageProducer,
+//            NotificationConfig notificationConfig
+//    ) {
+//        return args -> {
+//            rabbitMQMessageProducer.publish(
+//                    new Person("Dima", 24),
+//                    notificationConfig.getInternalExchange(),
+//                    notificationConfig.getInternalNotificationRoutingKeys());
+//        };
+//    }
 
 }
 
-record Person(String name, int age){}
+//record Person(String name, int age){}
