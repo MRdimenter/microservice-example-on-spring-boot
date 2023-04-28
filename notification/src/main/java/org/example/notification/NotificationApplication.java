@@ -24,10 +24,12 @@ public class NotificationApplication {
     ) {
         return args -> {
             rabbitMQMessageProducer.publish(
-                    "foo",
+                    new Person("Dima", 24),
                     notificationConfig.getInternalExchange(),
                     notificationConfig.getInternalNotificationRoutingKeys());
         };
     }
 
 }
+
+record Person(String name, int age){}
